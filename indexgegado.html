@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEGADO - Gestión de Gastos</title>
+
+  <!-- Bootstrap y Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tipografía -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  background-color: #1C1C1E;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+}
+   
+/* Efecto de resplandor en gris plata */
+.glow-hover:hover {
+  color: #C0C0C0 !important;
+  text-shadow: 0 0 8px #C0C0C0, 0 0 16px #C0C0C0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Para imágenes (como el logo) */
+.logo-glow:hover {
+  filter: drop-shadow(0 0 8px #C0C0C0) drop-shadow(0 0 16px #C0C0C0);
+  transition: all 0.3s ease-in-out;
+}
+.navbar-brand img {
+ height: 50px;
+    }
+
+    .btn-custom {
+      background-color: #FFFFFF;
+      color: #1C1C1E;
+      font-weight: bold;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      background-color: #C0C0C0;
+      color: #1C1C1E;
+    }
+
+    footer {
+      border-top: 1px solid #39FF14;
+    }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+  color: #C0C0C0;
+  text-shadow: 0 0 10px #C0C0C0, 0 0 20px #C0C0C0;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #C0C0C0, 0 0 20px #C0C0C0;
+  }
+  50% {
+    text-shadow: 0 0 20px #C0C0C0, 0 0 40px #C0C0C0;
+  }
+}
+
+#hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #39FF14, #007BFF);
+  transform: translate3d(0, 0, 0);
+  z-index: 0;
+  opacity: 0.2;
+  animation: float 30s infinite linear;
+  will-change: transform;
+}
+
+@keyframes float {
+  0% { transform: translate(-10px, -10px); }
+  50% { transform: translate(10px, 10px); }
+  100% { transform: translate(-10px, -10px); }
+}
+h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn-custom {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="gegadologo.webp" alt="GEGADO Logo"> <!-- Reemplazá esta ruta -->
+        GEGADO
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+<!-- Hero Section -->
+     <section id="hero" class="text-center py-5 py-md-6" style="position: relative; overflow: hidden; color: #1C1C1E;">
+    <div id="hero-background"></div>
+    <div class="position-relative container text-center">
+    <img src="gegadologo.webp" alt="Logo GEGADO" class="logo-glow fade-in" style="max-width: 250px; margin-bottom: 20px;">
+    <h1 class="pulse-glow fs-2 fs-md-3 fw-bold">Control total, estilo absoluto</h1>
+    <p style="font-size: 1.25rem;">Soluciones creativas para la gestión de tus gastos</p>
+    <button class="btn btn-custom mt-3 px-4 py-2" onclick="alert('¡Gracias por tu interés en GEGADO!')">
+      <i class="fas fa-chart-line me-2"></i> Conocé más
+    </button>
+  </div>
+</section>
+
+  <!-- Servicios -->
+    <section class="container py-5">
+    <div class="row text-center">
+      <div class="col-md-4 mb-3 fade-in">
+        <i class="fas fa-wallet fa-3x mb-3" style="color:#39FF14;"></i>
+        <h4 class="fw-bold glow-hover">Gestión Inteligente</h4>
+        <p class="glow-hover">Automatizá tus gastos con estilo y precisión.</p>
+      </div>
+      <div class="col-md-4 mb-3 fade-in">
+        <i class="fas fa-file-invoice-dollar fa-3x mb-3" style="color:#007BFF;"></i>
+        <h4 class="fw-bold glow-hover">Reportes Dinámicos</h4>
+        <p class="glow-hover">Visualizá tus finanzas con gráficos modernos.</p>
+      </div>
+      <div class="col-md-4 mb-3 fade-in">
+        <i class="fas fa-lock fa-3x mb-3" style="color:#C0C0C0;"></i>
+        <h4 class="fw-bold glow-hover">Seguridad Total</h4>
+        <p class="glow-hover">Protección de datos con tecnología de punta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p class="mb-0">&copy; 2025 GEGADO. Todos los derechos reservados.</p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // solo una vez
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+ const bg = document.getElementById('hero-background');
+
+  window.addEventListener('scroll', () => {
+    const offset = window.pageYOffset;
+    bg.style.transform = `translateY(${offset * 0.2}px)`;
+  });
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+
+</script>
+</body>
+</html>
